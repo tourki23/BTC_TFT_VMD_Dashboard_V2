@@ -1,0 +1,25 @@
+services:
+  backend:
+    build: ./backend
+    # On alloue 4G car le modèle TFT + PyTorch est lourd
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+    environment:
+      - PORT=8000
+      # Indispensable pour que FastAPI accepte les requêtes du frontend local
+      - CORS_ORIGINS=["*"] 
+    ports:
+      - "8001:8000"
+
+  frontend:
+    build: ./frontend
+    environment:
+      # OPTION A (Local) : Laissez tel quel pour utiliser le conteneur backend local
+      # OPTION B (Cloud) : Remplacez par https://btc-frontend-v2-389247630432.europe-west1.run.app/
+      - BACKEND_URL=http://backend:8000
+    ports:
+      - "8505:8501"
+    depends_on:
+      - backend

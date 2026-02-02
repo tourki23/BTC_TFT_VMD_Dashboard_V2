@@ -1,0 +1,23 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.python-version
+app_copie_secours.py
+
+# --- Données et Modèles (Volumineux) ---
+# On ignore le dataset car il est lourd et spécifique à l'utilisateur
+*.csv
+# On ignore le checkpoint du modèle s'il est très volumineux (Optionnel)
+backend/V2-96N-isolated.ckpt
+
+# --- Environnement et Sécurité ---
+.env
+.DS_Store
+
+# --- Docker ---
+# (Optionnel) Si vous ne voulez pas partager les logs docker
+*.log

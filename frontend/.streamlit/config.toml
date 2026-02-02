@@ -1,0 +1,10 @@
+[theme]
+primaryColor = "#00CCFF"
+backgroundColor = "#0E1117"
+secondaryBackgroundColor = "#1B1E26"
+textColor = "#FFFFFF"
+font = "sans serif"
+
+[ui]
+# Force le mode sombre par défaut
+theme = "dark"
